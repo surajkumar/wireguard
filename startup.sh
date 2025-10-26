@@ -46,8 +46,8 @@ ADMIN_PASS="changeme"
 # Get public IP dynamically from metadata service
 PUBLIC_IP=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4 || echo "127.0.0.1")
 
-# Download docker-compose.yml (update URL)
-curl -fsSLO https://raw.githubusercontent.com/surajkumar/wireguard/main/docker-compose.yml
+# Download docker-compose.yml
+curl -fsSLO https://raw.githubusercontent.com/surajkumar/wireguard/refs/heads/main/docker-compose.yml
 
 # Replace secrets dynamically
 sed -i "s|WG_WIREGUARD_PRIVATE_KEY=.*|WG_WIREGUARD_PRIVATE_KEY=${PRIVATE_KEY}|g" docker-compose.yml
