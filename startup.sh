@@ -43,8 +43,7 @@ PRIVATE_KEY=$(cat privatekey)
 ADMIN_USER="admin"
 ADMIN_PASS="changeme"
 
-# Get public IP dynamically from metadata service
-PUBLIC_IP=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4 || echo "127.0.0.1")
+PUBLIC_IP="127.0.0.1"
 
 # Download docker-compose.yml
 curl -fsSLO https://raw.githubusercontent.com/surajkumar/wireguard/refs/heads/main/docker-compose.yml
