@@ -11,7 +11,7 @@ services:
       - ./data:/data
     environment:
       - WG_WIREGUARD_PRIVATE_KEY=
-      - WG_ADMIN_USERNAME=admin
+      - WG_ADMIN_USERNAME=
       - WG_ADMIN_PASSWORD=
       - WG_WIREGUARD_PORT=51820
       - WG_EXTERNAL_HOST=
