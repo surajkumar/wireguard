@@ -1,0 +1,21 @@
+version: "3"
+services:
+  wg-access-server:
+    image: place1/wg-access-server
+    container_name: wg-access-server
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - ./data:/data
+    environment:
+      - WG_WIREGUARD_PRIVATE_KEY=
+      - WG_ADMIN_USERNAME=admin
+      - WG_ADMIN_PASSWORD=
+      - WG_WIREGUARD_PORT=51820
+      - WG_EXTERNAL_HOST=
+    ports:
+      - "8000:8000/tcp"
+      - "51820:51820/udp"
+    restart: unless-stopped
